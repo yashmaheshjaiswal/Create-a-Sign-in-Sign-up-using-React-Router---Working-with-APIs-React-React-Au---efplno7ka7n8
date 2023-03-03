@@ -21,7 +21,7 @@ const App = () => {
     
     <Switch>
       <Route path="/" exact>
-     <Login email={email} password={password} setLoggedIn={setLoggedIn} setNavigate={setNavigate}/>
+     {loggedIn ? <Redirect to="/dashboard"/>: <Login email={email} password={password} setLoggedIn={setLoggedIn} setNavigate={setNavigate}/>}
       </Route>
       
       <Route path="/Register" exact>
@@ -36,6 +36,5 @@ const App = () => {
 </div>
   )
 }
-
 
 export default App;
